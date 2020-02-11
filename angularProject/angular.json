@@ -19,14 +19,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/angular-parallax/css/materialize.min.css",
+              "node_modules/angular-parallax/css/style.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/angular-parallax/js/jquery-2.1.1.min.js",
+              "node_modules/angular-parallax/js/materialize.min.js",
+              "node_modules/angular-parallax/js/init.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,14 +87,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/angular-parallax/css/materialize.min.css",
+              "node_modules/angular-parallax/css/style.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/angular-parallax/js/jquery-2.1.1.min.js",
+              "node_modules/angular-parallax/js/materialize.min.js",
+              "node_modules/angular-parallax/js/init.js"
+            ]
           }
         },
         "lint": {
@@ -102,9 +108,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -120,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angularProject"
 }

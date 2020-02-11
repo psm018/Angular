@@ -2,6 +2,25 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-start",
-  template: "<h1>Angular Welcomes You..!</h1>"
+  templateUrl: "./app.component.html"
 })
-export class AppComponent {}
+export class AppComponent {
+  title = "Angular Welcomes You..!";
+
+  dummyArr = ["Pune", "Mumbai", "Nagpur"];
+
+  mobParts = [
+    {
+      name: "Mobile Screen",
+      id: 1001
+    },
+    {
+      name: "Mobile Screen 5",
+      id: 1002
+    },
+    {
+      name: "Mobile Screen 5.5",
+      id: 1003
+    }
+  ];
+}
