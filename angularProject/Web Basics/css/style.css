@@ -1,0 +1,25 @@
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+  margin: 0px;
+}
+
+.cls {
+  border: 1px solid silver;
+  height: 450px;
+}
+
+#head-foot {
+  height: 100px;
+}
+
+.cls:nth-child(odd) {
+  background-color: white;
+}
+
+.bg-img-one {
+  background-image: url(https://wallpapercave.com/wp/wp2096118.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+}
