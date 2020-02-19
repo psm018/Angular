@@ -5,4 +5,6 @@ export class MobParts {
   prodColor: string;
   isOnline: boolean;
   country: string;
+  prodImg: string;
+  qntt: number;
 }

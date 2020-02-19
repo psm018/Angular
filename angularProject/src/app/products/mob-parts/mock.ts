@@ -7,15 +7,19 @@ export const MOBPARTS: MobParts[] = [
     inStock: 350,
     prodColor: "red",
     isOnline: true,
-    country: "Australia"
+    country: "Australia",
+    prodImg: "./../assets/img/mob2.png",
+    qntt: 0
   },
   {
     name: "mobile screen 5",
     id: 1002,
-    inStock: 350,
+    inStock: 3,
     prodColor: "blue",
     isOnline: true,
-    country: "India"
+    country: "India",
+    prodImg: "./../assets/img/mob2.png",
+    qntt: 0
   },
   {
     name: "Mobile Screen 5.5",
@@ -23,6 +27,8 @@ export const MOBPARTS: MobParts[] = [
     inStock: 0,
     prodColor: "green",
     isOnline: false,
-    country: ""
+    country: "",
+    prodImg: "./../assets/img/mob2.png",
+    qntt: 0
   }
 ];

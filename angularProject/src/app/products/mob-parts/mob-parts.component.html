@@ -1,14 +1,16 @@
 <h1>We have {{ calcProd() }} products...!</h1>
-
+<h1>{{ abcd }}</h1>
 <!-- <p style="var: :var;">text</p> -->
 <h1 appHost>Hello HOST</h1>
 
 <ul style="color: grey;">
   <li *ngFor="let mobPart of mobParts">
     <div class="col s12 m4">
-      <div class="card">
+      <div class="card" [class.clsName]="mobPart.qntt">
         <div class="card-image">
-          <img src="./../assets/img/sample-1.jpg" />
+          <img [src]="mobPart.prodImg" width="60px" />
+          <!-- <img src="./../assets/img/{{ mobPart.prodImg }}" /> -->
+
           <span class="card-title">{{ mobPart.name }}</span>
           <a class="btn-floating halfway-fab waves-effect waves-light red"
             ><i class="material-icons">add</i></a
@@ -62,6 +64,17 @@
               width="24"
             />
           </span>
+          <p align="center">
+            <a class="waves-effect waves-light btn" (click)="downQntt(mobPart)"
+              ><i class="material-icons">remove</i></a
+            >
+
+            <!-- {{ mobPart.qntt }} -->
+            <input [(ngModel)]="mobPart.qntt" class="inputQntt" />
+            <a class="waves-effect waves-light btn" (click)="upQntt(mobPart)"
+              ><i class="material-icons">add</i></a
+            >
+          </p>
         </div>
       </div>
     </div>

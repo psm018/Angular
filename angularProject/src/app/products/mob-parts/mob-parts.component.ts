@@ -1,5 +1,5 @@
 import { MOBPARTS } from "./mock";
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import { MobParts } from "./mob-parts";
 
@@ -15,6 +15,7 @@ import { MobParts } from "./mob-parts";
   ]
 })
 export class MobPartsComponent {
+  @Input() title_ch: string;
   // title:string = "some text goes here...!"
 
   mobParts: MobParts[];
@@ -46,5 +47,18 @@ export class MobPartsComponent {
       sum += mobPart.inStock;
     }
     return sum;
+  }
+
+  downQntt(mobPart) {
+    if (mobPart.qntt != 0) mobPart.qntt--;
+  }
+
+  upQntt(mobPart) {
+    if (mobPart.qntt < mobPart.inStock) mobPart.qntt++;
+  }
+
+  catchQntt(event) {
+    console.clear();
+    console.log(event);
   }
 }
