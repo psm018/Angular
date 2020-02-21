@@ -4,7 +4,7 @@ export const MOBPARTS: MobParts[] = [
   {
     name: "Mobile Screen",
     id: 1001,
-    inStock: 350,
+    inStock: 420,
     prodColor: "red",
     isOnline: true,
     country: "Australia",

@@ -1,4 +1,5 @@
-import { MOBPARTS } from "./mock";
+import { MobDataService } from "./../../services/mob-part.service";
+// import { MOBPARTS } from "./mock";
 import { Component, Input } from "@angular/core";
 
 import { MobParts } from "./mob-parts";
@@ -22,9 +23,23 @@ export class MobPartsComponent {
 
   ngOnInit() {
     console.log("ngOnInit Block...!");
-    this.mobParts = MOBPARTS;
+    // Data from 'mock.ts'
+    // this.mobParts = MOBPARTS;
+
+    // Data from 'DB or Large Source'
+    // let mobDataService = new MobDataService();
+    // this.mobParts = mobDataService.getMobParts();
+
+    //Data from Outside 'provider' using 'D.I.'
+    // this.mobParts = this.mobDataService.getMobParts();
+
+    // Data from API using 'http'
+    this.mobDataService.getMobParts().subscribe(data => {
+      this.mobParts = data;
+      console.log(data);
+    });
   }
-  constructor() {
+  constructor(private mobDataService: MobDataService) {
     console.log("We are in 'constructor...!");
   }
   ngOnDestroy() {
@@ -43,8 +58,10 @@ export class MobPartsComponent {
   calcProd() {
     let sum = 0;
 
-    for (let mobPart of this.mobParts) {
-      sum += mobPart.inStock;
+    if (Array.isArray(this.mobParts)) {
+      for (let mobPart of this.mobParts) {
+        sum += mobPart.inStock;
+      }
     }
     return sum;
   }
