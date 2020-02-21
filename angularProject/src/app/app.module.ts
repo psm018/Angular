@@ -15,6 +15,12 @@ import { BooksComponent } from "./products/books/books.component";
 import { PensComponent } from "./products/pens/pens.component";
 import { FirstDirective } from "./directives/first.directive";
 import { HostDirective } from "./directives/host.directive";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeComponent } from "./layouts/home/home.component";
+import { PageNotFoundComponent } from "./layouts/page-not-found/page-not-found.component";
+import { MotoComponent } from './products/mob-parts/moto/moto.component';
+import { SamsungComponent } from './products/mob-parts/samsung/samsung.component';
+import { MobileMenuComponent } from './products/mob-parts/mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +36,14 @@ import { HostDirective } from "./directives/host.directive";
     BooksComponent,
     PensComponent,
     FirstDirective,
-    HostDirective
+    HostDirective,
+    PageNotFoundComponent,
+    HomeComponent,
+    MotoComponent,
+    SamsungComponent,
+    MobileMenuComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
