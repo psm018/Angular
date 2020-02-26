@@ -1,4 +1,3 @@
-import { MobDataService } from "./services/mob-part.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
@@ -24,6 +23,11 @@ import { MotoComponent } from "./products/mob-parts/moto/moto.component";
 import { SamsungComponent } from "./products/mob-parts/samsung/samsung.component";
 import { MobileMenuComponent } from "./products/mob-parts/mobile-menu/mobile-menu.component";
 
+import { LoginComponent } from "./login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AuthGuard } from "./auth.guard";
+import { MobDataService } from "./services/mob-part.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +47,12 @@ import { MobileMenuComponent } from "./products/mob-parts/mobile-menu/mobile-men
     HomeComponent,
     MotoComponent,
     SamsungComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpModule],
   bootstrap: [AppComponent],
-  providers: [MobDataService]
+  providers: [AuthGuard, MobDataService]
 })
 export class AppModule {}

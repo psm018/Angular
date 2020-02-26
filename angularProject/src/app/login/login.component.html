@@ -1,0 +1,12 @@
+<p>login works!</p>
+<!-- step: 6 => create UI to get 'username' & 'password' -->
+
+<input type="text" #user /><br />
+<input type="text" #pass /><br />
+
+<!-- catch and pass the value as arguments in 'ckeck()' method -->
+<button (click)="check(user.value, pass.value)">Login</button>
+
+<!-- for step 7 go to 'login.component.ts' -->
+<br />
+<span>{{ msg }}</span>
