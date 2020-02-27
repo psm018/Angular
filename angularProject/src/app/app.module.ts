@@ -42,6 +42,10 @@ import {
   MatTreeModule
 } from "@angular/material";
 
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { firebaseConfig } from "./firebase/firebase.config";
+
 import { AppComponent } from "./app.component";
 import { NavComponent } from "./layouts/nav/nav.component";
 import { BannerOneComponent } from "./layouts/banner-one/banner-one.component";
@@ -130,7 +134,10 @@ import { MobDataService } from "./services/mob-part.service";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, MobDataService]
