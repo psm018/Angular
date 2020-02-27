@@ -3,17 +3,13 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  UrlTree
+  Router
 } from "@angular/router";
-import { Observable } from "rxjs";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class AuthGuard implements CanActivate {
-  // step 12: write logic for 'canActivate'
-  // for step 13 go to 'dashboard.component.html'
-  routes: any;
+  constructor(private routes: Router) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
