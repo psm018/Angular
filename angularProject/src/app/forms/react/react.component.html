@@ -1,0 +1,12 @@
+<form [formGroup]="formGroupName">
+  <input name="uName" formControlName="uName" />
+
+  <div
+    *ngIf="
+      formGroupName.get('uName').invalid && formGroupName.get('uName').touched
+    "
+  >
+    Invalid
+  </div>
+  <input type="submit" />
+</form>

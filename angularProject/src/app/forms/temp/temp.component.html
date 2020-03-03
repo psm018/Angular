@@ -1,0 +1,21 @@
+<form #myForm="ngForm" (ngSubmit)="showData(myForm)">
+  <input
+    placeholder="Enter Name"
+    ngModel
+    #uName="ngModel"
+    name="uName"
+    (change)="sendData(uName)"
+    required
+    minlength="3"
+    maxlength="6"
+    pattern="ABCD"
+  />
+
+  <div style="color: red;" *ngIf="!uName.valid && uName.touched">
+    <div *ngIf="uName.errors.required">Required..!</div>
+    <div *ngIf="uName.errors.minlength">3 char must</div>
+    <div *ngIf="uName.errors.pattern">Pattern must</div>
+  </div>
+  {{ myForm.value | json }}
+  <input type="submit" [disabled]="!myForm.valid" />
+</form>

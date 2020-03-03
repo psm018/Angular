@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -70,6 +70,8 @@ import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./auth.guard";
 import { MobDataService } from "./services/mob-part.service";
+import { TempComponent } from "./forms/temp/temp.component";
+import { ReactComponent } from "./forms/react/react.component";
 
 @NgModule({
   declarations: [
@@ -92,7 +94,9 @@ import { MobDataService } from "./services/mob-part.service";
     SamsungComponent,
     MobileMenuComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TempComponent,
+    ReactComponent
   ],
   imports: [
     BrowserModule,
@@ -137,7 +141,8 @@ import { MobDataService } from "./services/mob-part.service";
     MatTreeModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, MobDataService]
