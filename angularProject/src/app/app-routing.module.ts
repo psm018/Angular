@@ -42,6 +42,7 @@ const appRoutes: Routes = [
       }
     ]
   },
+  { path: "lazy", loadChildren: "./modules/lazy/lazy.module#LazyModule" },
   { path: "books", component: BooksComponent },
   { path: "**", component: PageNotFoundComponent }
 ];

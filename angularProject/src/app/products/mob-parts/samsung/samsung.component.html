@@ -61,20 +61,16 @@
               width="24"
             />
           </div>
-          <a class="waves-effect waves-light btn" (click)="upQuantity(mobPart)">
+          <a class="waves-effect waves-light btn">
             <i class="material-icons">add</i>
           </a>
           <input
             [value]="mobPart.quantity"
             id="qInput"
-            (input)="catchVal($event.target.value)"
             [(ngModel)]="mobPart.quantity"
           />
 
-          <a
-            class="waves-effect waves-light btn"
-            (click)="downQuantity(mobPart)"
-          >
+          <a class="waves-effect waves-light btn">
             <i class="material-icons">remove</i>
           </a>
         </div>

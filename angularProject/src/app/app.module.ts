@@ -4,43 +4,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {
-  MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTreeModule
-} from "@angular/material";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -72,6 +35,11 @@ import { AuthGuard } from "./auth.guard";
 import { MobDataService } from "./services/mob-part.service";
 import { TempComponent } from "./forms/temp/temp.component";
 import { ReactComponent } from "./forms/react/react.component";
+import { MaterialDummyModule } from "./modules/mat/mat.module";
+import { DataTableComponent } from './grid/data-table/data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -96,7 +64,8 @@ import { ReactComponent } from "./forms/react/react.component";
     LoginComponent,
     DashboardComponent,
     TempComponent,
-    ReactComponent
+    ReactComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -104,45 +73,13 @@ import { ReactComponent } from "./forms/react/react.component";
     AppRoutingModule,
     HttpModule,
     BrowserAnimationsModule,
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatBottomSheetModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatTreeModule,
-
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialDummyModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, MobDataService]
